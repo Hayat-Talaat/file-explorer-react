@@ -1,0 +1,73 @@
+/* General styles for the container */
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem 5rem;
+}
+
+/* Styling for files and folders */
+.file,
+.folder {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Flex properties */
+.folder-contents {
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Animation styles for folder contents */
+.folder-contents.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Animation styles for expanded folder contents */
+.folder-contents.expanded {
+  max-height: 500px; /* Arbitrary value, adjust as needed */
+  opacity: 1;
+}
+
+/* Selected state styles */
+.file.selected,
+.folder.selected {
+  background-color: #d0d0f5;
+}
+
+/* Hover effects */
+.file:hover,
+.folder:hover {
+  background-color: #f0f0f0;
+}
+
+/* Context menu styles */
+.context-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.context-menu-item {
+  padding: 8px 12px;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.context-menu-item:hover {
+  background-color: #f0f0f0;
+}
